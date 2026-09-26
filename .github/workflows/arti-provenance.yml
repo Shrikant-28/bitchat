@@ -21,7 +21,7 @@ on:
 jobs:
   verify-hashes:
     name: Verify xcframework hashes against provenance doc
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
@@ -53,7 +53,7 @@ jobs:
 
   require-provenance-evidence:
     name: Binary changes must ship with provenance inputs
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     if: github.event_name == 'pull_request'
 
     steps:
